@@ -14,8 +14,8 @@ const EventsFunctionsStates = () => {
     <>
       <h4>Events Function & States</h4>
       <button onClick={() => sayHello('Madhu')}>Click me</button>
-      <br/>
-      <h2>My name is : {firstName}</h2>
+      <br/><br/>
+      <h2>My name is {firstName}</h2>
       <button onClick={changeName}>Change name</button>
     </>
   );
