@@ -5,7 +5,7 @@ const contact = () => {
   return (
     <>
         <h2>Contact Us</h2>
-        <Link href= '/employee'>Contact Employee</Link>
+        <Link href= '/contact/employee'>Contact Employee</Link>
     </>
   )
 }
