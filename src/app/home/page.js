@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-const home = () => {
+const Home = () => {
   return (
    <>
     <h2>Home</h2>
@@ -9,4 +9,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
