@@ -2,9 +2,9 @@
 const Blog = () => {
   return (
     <>
-    Blog
-    </>
+    <h2>Blog:</h2>
+   </>
   )
 }
 
-export default Blogcd 
+export default Blog
