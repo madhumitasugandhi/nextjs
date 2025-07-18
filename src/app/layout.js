@@ -6,10 +6,12 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <head />
       <body className={inter.className}>
         {/* Load the script asynchronously */}
         <Script src="/feature.js" strategy="afterInteractive" />
+         <Script src="/script.js" strategy="afterInteractive" />
         {children}
       </body>
     </html>
