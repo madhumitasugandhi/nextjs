@@ -1,4 +1,4 @@
-'use client'
+
 const Posts = ({params}) => {
   return (
     <>
@@ -9,3 +9,11 @@ const Posts = ({params}) => {
 }
 
 export default Posts;
+
+export async function generateStaticParams() {
+  return [
+    { posts: ['blog1', 'post1'] },
+    { posts: ['blog2', 'post2'] },
+    { posts: ['category', 'nested'] }
+  ];
+}
