@@ -12,10 +12,10 @@ export const GET = (req, value)=>{
 export const DELETE = (req, value)=>{
     let empolyeeId = value.params.empid;
     if(empolyeeId){
-        return NextResponse.json({result: "Employee Info Deleted Successfully"}, {status:200})
+        return NextResponse.json({result: "Employee Info Deleted Successfully", success: true}, {status:200})
     }
     else{
-        return NextResponse.json({result: "Employee Not Found"}, {status:404})
+        return NextResponse.json({result: "Employee Not Found", success: false}, {status:404})
     }
     
 }
