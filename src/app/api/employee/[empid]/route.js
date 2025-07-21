@@ -16,6 +16,18 @@ export const DELETE = (req, value)=>{
     }
     else{
         return NextResponse.json({result: "Employee Not Found", success: false}, {status:404})
-    }
-    
+    }   
+}
+
+export const PUT = async(req, value) => {
+    let payload = await req.json();
+    payload.employeeId = value.params.empid;
+    //console.log(payload)
+   // return NextResponse.json({success: true})
+   if(!payload.employeeId   || !payload.name || !payload.salary ||  !payload.email){
+        return NextResponse.json({result:"Error" ,success: false})
+   }
+   else{
+    return NextResponse.json({result:"Success" ,success: true})
+   }
 }
