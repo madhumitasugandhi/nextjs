@@ -1,25 +1,38 @@
+'use client';
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import DeleteButton from "@/components/DeleteButton";
 
-const getEmployees = async()=>{
-    let data = await fetch('http://localhost:3000/api/employee')
-    data = await data.json();
-    return data;
-}
-const EmployeeList = async () => {
-    const employees = await getEmployees();
+const EmployeeList = () => {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      let res = await fetch('http://localhost:3000/api/employee');
+      let data = await res.json();
+      setEmployees(Array.isArray(data) ? data : data?.data || []);
+    };
+    fetchEmployees();
+  }, []);
+
   return (
     <>
-        <h2>EmployeeList</h2>
-        {
-            employees.map((item,i)=>(
-                <div key={i}>
-                    <h3>{item.name}</h3>
-                    <DeleteButton id={item.employeeId}/>
-                </div>
-            ))
-        }
+      <h2>Employee List</h2>
+      {employees.map((item, i) => {
+        const id = item?.employeeId || item?.id || item?._id;
+        return (
+          <div key={id || i}>
+            <h3>{item.name}</h3>
+            <DeleteButton id={id} />
+            <Link href={`/employee-list/${id}/update`}>
+              Edit
+            </Link>
+          </div>
+        );
+      })}
     </>
-  )
-}
+  );
+};
 
-export default EmployeeList
+export default EmployeeList;
