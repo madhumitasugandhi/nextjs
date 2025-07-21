@@ -14,6 +14,16 @@ const UpdateInfo = ({params}) => {
         placeholder="Enter Name"
         value={name}
         onClick={(e)=>setName(e.target.value)}/>
+        <input 
+        type="text"
+        placeholder="Enter Email"
+        value={email}
+        onClick={(e)=>setEmail(e.target.value)}/>
+        <input 
+        type="text"
+        placeholder="Enter Salary"
+        value={salary}
+        onClick={(e)=>setSalary(e.target.value)}/>
     </>
   )
 }
