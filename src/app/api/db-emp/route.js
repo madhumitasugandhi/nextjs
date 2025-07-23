@@ -7,7 +7,7 @@ export const GET = async()=>{
     await mongoose.connect(connectionString)
     const empData = await Employee.find();
 
-    return NextResponse.json({result: empData})
+    return NextResponse.json({result: empData, success:true})
 }
 
 export const POST = async (req) => {
