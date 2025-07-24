@@ -1,5 +1,6 @@
 import { employee } from "@/db/db";
 import { NextResponse } from "next/server";
+import { connectionString } from "@/lib/database/db_connection";
 
 export const GET = (req, value)=>{
     //const data = employee;
@@ -22,8 +23,6 @@ export const DELETE = (req, value)=>{
 export const PUT = async(req, value) => {
     let payload = await req.json();
     payload.employeeId = value.params.empid;
-    //console.log(payload)
-   // return NextResponse.json({success: true})
    if(!payload.employeeId   || !payload.name || !payload.salary ||  !payload.email){
         return NextResponse.json({result:"Error" ,success: false})
    }
@@ -31,3 +30,4 @@ export const PUT = async(req, value) => {
     return NextResponse.json({result:"Success" ,success: true})
    }
 }
+
