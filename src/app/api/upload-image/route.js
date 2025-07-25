@@ -11,7 +11,7 @@ export const POST = async (request) => {
   }
 
   try {
-    const bytes = await file.arrayBuffer(); // ✅ No typo
+    const bytes = await file.arrayBuffer(); 
     const buffer = Buffer.from(bytes);
 
     const uploadPath = path.join(process.cwd(), 'public', 'uploads', file.name);
